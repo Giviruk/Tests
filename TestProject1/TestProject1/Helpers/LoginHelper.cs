@@ -12,7 +12,8 @@ namespace TestProject1.Helpers
 
         public void Login(AuthData authData)
         {
-            ApplicationManager.Driver.Manage().Window.Size = new System.Drawing.Size(945, 1020);
+            ApplicationManager.Driver.Manage().Window.FullScreen();
+            Thread.Sleep(100);
             ApplicationManager.Driver.FindElement(By.Id("passp-field-login")).SendKeys(authData.Login);
             ApplicationManager.Driver.FindElement(By.Id("passp-field-login")).SendKeys(Keys.Enter);
             Thread.Sleep(2000);
